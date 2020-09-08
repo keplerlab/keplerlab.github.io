@@ -1,38 +1,69 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Enhan(t)</title>
-		<link href='styles.css' rel='stylesheet'>
-		<meta charset="utf-8"/>
-		
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <head>
+        <title>Enhant Dashboard</title>
+        <link rel="stylesheet" href="public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="public/css/enhant.css">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="public/scripts/jquery.min.js"></script>
+        <script src="public/scripts/bootstrap.min.js"></script>
+        <script src="public/scripts/handlebar.js"></script>
+        <script src="public/scripts/app.js"></script>
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	</head>
-	<body style="margin:0px;">
-	 <div style="width: 1440px; height: 100%; position:relative; margin:auto;"> 
-		<div class='sk-ab sk-enhantJSON-ViewerHome'>
-			<div class='sk-asset sk-side-nav-11E64039-AFC4-4B18-864C-A672D4216181'>
-				<div class='sk-asset sk-Rectangle-C4374080-8506-4DDA-968D-FD42BB352C36'></div>
-				<div class='sk-asset sk-Rectangle-1B3DC8A7-FDDB-4084-9EC9-8AE0F07506AB'></div>
-				<div class='sk-asset sk-IconCalendarLine-E336836F-4626-4B85-878F-44859DE5BCAD'></div>
-				<div class='sk-asset sk-IconHomeLine-B628F0B0-3F85-4F3C-909D-DBF227900CAE'></div>
-			</div>
-			<div class='sk-asset sk-enhantHeader-94CF8295-5E0E-4FFF-9FC6-2EEDFF771EFB'></div>
-			<div class='sk-asset sk-Upload-meeting-data-F96F1CB2-9B29-4C02-8EC7-912D5EBAFB55'>
-				<div class='sk-asset sk-Container-097333CC-B26B-4E89-AB13-57C64A5EA8AF'></div>
-				<div class='sk-asset sk-ButtonSecondaryMediumRight-Icon-3C043CA9-9AF1-4E0B-872E-2D2D525837F0'></div>
-				<div class='sk-asset sk-ButtonSecondaryMediumRight-Icon-Copy-BB593E4E-F268-4BA4-A2A9-2D21CA448605'></div>
-				<div class='sk-asset sk-ButtonPrimaryMediumRight-Icon-C959084C-6C7C-4A5B-BCB0-950505DA7268'></div>
-				<div class='sk-asset sk-Title-C3AB5E47-135A-4A21-9663-A7B0237045AE'>
-					<div class='sk-asset sk-IconMore-Horizontal-71E60354-2219-48DB-AB0C-FB53D2E5E3F3'></div>
-					<div class='sk-asset sk-Upload-meeting-data-CD4BECE4-5072-487A-8FA2-B6CFAD800668'><span class="span1">Upload meeting data to view</span></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</body>
+    </head>
+    <body>
+        <div class="container-fluid">
+
+            <!--Header-->
+            <div class="row header">
+                <div class="col-md-2 col-md-offset-1 text-center">
+                    <div class="logo">
+                       <img src="public/img/logo.svg">
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-md-offset-1 text-center">
+                    <div class="home">
+                       <a class="text-white" href="#">Home</a>
+                    </div>
+                </div>
+
+                <div class="col-md-1 text-center">
+                    <div class="dashboard">
+                       <a class="text-white" href="#">Dashboard</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-1 sidenav has-shadow">
+                     <!--Side Nav-->
+                    <div>
+                        <ul></ul>
+                    </div>
+
+                </div>
+                <div class="col-xs-11 col-xs-offset-1 content">
+                    <!--app-->
+                    <!--Contents will render inside this-->
+                    <div id="app"></div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+
+    <script>
+
+    $(document).ready(function(){
+
+        const el = $('#app');
+        // Compile Handlebar Templates
+
+        const upload_template = Handlebars.templates.upload;
+        const html = upload_template({});
+        el.html(html);
+    })
+
+    </script>
 </html>
